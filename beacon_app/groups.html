@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Groups</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .group-card {
+      border: 1px solid var(--accent-strong);
+      border-radius: var(--radius-lg);
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .group-name {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .group-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Safe groups</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">Your circles of safety</h1>
+        <p class="app-subheading">
+          Join or create small groups where you can share location, check in, and look out for each other.
+        </p>
+
+        <div class="btn-row">
+          <a href="group-edit.html" class="btn btn-primary">Create a group</a>
+        </div>
+
+        <h2 class="app-heading" style="margin-top:16px;">My groups</h2>
+
+        <div class="group-card">
+          <div class="group-name">Night Shift Survivors</div>
+          <div class="group-meta">5 members · Late‑night workers in your area</div>
+          <a href="group-detail.html" class="btn btn-outline">Open group</a>
+        </div>
+
+        <div class="group-card">
+          <div class="group-name">New to the City</div>
+          <div class="group-meta">12 members · People who moved away from home</div>
+          <a href="group-detail.html" class="btn btn-outline">Open group</a>
+        </div>
+
+        <div class="btn-row">
+          <a href="home.html" class="btn btn-text">Back to Home</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
