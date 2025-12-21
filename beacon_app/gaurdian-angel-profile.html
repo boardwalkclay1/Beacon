@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Guardian Angel Profile</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .angel-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .angel-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #19ff7a, #0b5b32 55%, #02040a 100%);
+      box-shadow: 0 0 22px rgba(25, 255, 122, 0.8);
+    }
+    .angel-stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 10px 0 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .angel-stat-pill {
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-strong);
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Guardian Angel</span>
+        </div>
+      </header>
+
+      <section>
+        <div class="angel-header">
+          <div class="angel-avatar"></div>
+          <div>
+            <h1 class="app-heading">Nova</h1>
+            <p class="app-subheading">“I stayed alive, so I stay around.”</p>
+          </div>
+        </div>
+
+        <div class="angel-stats">
+          <div class="angel-stat-pill">Responded to 12 Beacons</div>
+          <div class="angel-stat-pill">Average response: 4 min</div>
+          <div class="angel-stat-pill">1.2 miles away</div>
+        </div>
+
+        <p class="app-subheading">
+          Nova is usually available late nights and weekends. They focus on walking people home,
+          staying on voice chat, and checking that you make it through the door.
+        </p>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="alert('Sponsorship flow placeholder.')">
+            Sponsor Nova monthly
+          </button>
+          <button class="btn btn-outline" onclick="alert('Donation flow placeholder.')">
+            Send one‑time thank‑you donation
+          </button>
+          <button class="btn btn-text" onclick="alert('Message flow placeholder.')">
+            Send a thank‑you message
+          </button>
+          <a href="guardian-angels.html" class="btn btn-text">Back to Angels</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
