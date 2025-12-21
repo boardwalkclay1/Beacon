@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Emergency profile</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">For that worst‑case moment</span>
+        </div>
+      </header>
+
+      <section>
+        <div class="chip">
+          <span class="chip-dot"></span>
+          <span>Step 2 of 2 · Emergency profile</span>
+        </div>
+
+        <h1 class="app-heading">This is what shows when you hit the Beacon.</h1>
+        <p class="app-subheading">
+          It stays hidden until you trigger an emergency. Then, people helping you can see just enough to get you real‑world support.
+        </p>
+
+        <form onsubmit="handleEmergencyProfile(event)">
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label class="form-label" for="real-name">Real full name</label>
+              <input class="form-input" id="real-name" type="text" placeholder="Your legal name" />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="dob">Date of birth</label>
+              <input class="form-input" id="dob" type="date" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="emergency-contact">Emergency contact (optional)</label>
+            <input class="form-input" id="emergency-contact" type="text" placeholder="Name + phone or email" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="medical-info">Medical info (optional)</label>
+            <textarea class="form-textarea" id="medical-info" placeholder="Allergies, conditions, medications, anything responders should know."></textarea>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="preferred-hospital">Preferred hospital (optional)</label>
+            <input class="form-input" id="preferred-hospital" type="text" placeholder="Hospital or clinic name" />
+          </div>
+
+          <div class="form-checkbox-row">
+            <input id="share-emergency" type="checkbox" checked />
+            <label for="share-emergency">
+              When I trigger an emergency Beacon, I allow this information to be shared with people responding to help me.
+            </label>
+          </div>
+
+          <div class="helper-text">
+            You can always come back and change or remove this information from your profile settings.
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Finish setup</button>
+            <a href="welcome.html" class="btn btn-text">Skip for now</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function handleEmergencyProfile(event) {
+      event.preventDefault();
+      // In a real build you’d send this to your backend.
+      alert("Emergency profile saved (demo). Next we’d take you into the main app (Home / Map).");
+      // For now, just go back to welcome or you can route to a future home.html
+      window.location.href = "welcome.html";
+    }
+  </script>
+</body>
+</html>
