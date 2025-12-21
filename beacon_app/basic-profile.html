@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Basic profile</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Let your circle know you</span>
+        </div>
+      </header>
+
+      <section>
+        <div class="chip">
+          <span class="chip-dot"></span>
+          <span>Step 1 of 2 · Basic profile</span>
+        </div>
+
+        <h1 class="app-heading">Create the name people see day-to-day.</h1>
+        <p class="app-subheading">
+          This is your everyday identity inside Beacon. You can be real, anonymous, or somewhere in between.
+        </p>
+
+        <form onsubmit="handleBasicProfile(event)">
+          <div class="form-row">
+            <label class="form-label" for="display-name">Display name</label>
+            <input class="form-input" id="display-name" type="text" required placeholder="e.g. Sky, Alex, Nightwalker" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="bio">Short bio (optional)</label>
+            <textarea class="form-textarea" id="bio" placeholder="What should people know about you?"></textarea>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="city">City (optional)</label>
+            <input class="form-input" id="city" type="text" placeholder="e.g. Atlanta, GA" />
+          </div>
+
+          <div class="helper-text">
+            Your real details (legal name, medical info, etc.) are stored separately and only shown in emergencies.
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Continue to emergency profile</button>
+            <a href="emergency-profile.html" class="btn btn-text">Skip & set emergency profile later</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function handleBasicProfile(event) {
+      event.preventDefault();
+      // You could store to localStorage as a temp step if you want:
+      // localStorage.setItem("beaconDisplayName", document.getElementById("display-name").value);
+      window.location.href = "emergency-profile.html";
+    }
+  </script>
+</body>
+</html>
