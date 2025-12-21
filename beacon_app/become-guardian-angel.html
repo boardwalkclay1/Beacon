@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Become a Guardian Angel</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Guardian Angel application</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">Offer to watch over others.</h1>
+        <p class="app-subheading">
+          Guardian Angels are volunteers. You’re not a cop or a hero — just a steady presence.
+          Beacon will always encourage people to call 911 first.
+        </p>
+
+        <form onsubmit="submitAngel(event)">
+          <div class="form-row">
+            <label class="form-label" for="why">Why do you want to be a Guardian Angel?</label>
+            <textarea id="why" class="form-textarea" required></textarea>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="availability">When are you usually available?</label>
+            <input id="availability" class="form-input" type="text" placeholder="e.g. Nights, weekends, weekdays 6–10pm" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="transport">How do you move around?</label>
+            <select id="transport" class="form-select">
+              <option value="">Select one</option>
+              <option>On foot</option>
+              <option>Bike</option>
+              <option>Car</option>
+              <option>Public transit</option>
+              <option>Online only (calls / chat)</option>
+            </select>
+          </div>
+
+          <div class="form-checkbox-row">
+            <input id="understand" type="checkbox" required />
+            <label for="understand">
+              I understand Beacon does not replace emergency services, and I will never discourage people from calling 911.
+            </label>
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Submit application</button>
+            <a href="guardian-angels.html" class="btn btn-text">Back</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function submitAngel(e) {
+      e.preventDefault();
+      alert("Application submitted (demo). In a real app, this would be reviewed.");
+      window.location.href = "guardian-angels.html";
+    }
+  </script>
+</body>
+</html>
