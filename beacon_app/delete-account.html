@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Delete Account</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Delete Account</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading" style="color:var(--danger);">Delete your account?</h1>
+        <p class="app-subheading">
+          This removes your profile, groups, emergency info, and sponsorship history.
+          This action cannot be undone.
+        </p>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" style="background:var(--danger);" onclick="confirmDelete()">Yes, delete my account</button>
+          <a href="settings.html" class="btn btn-text">Cancel</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function confirmDelete() {
+      alert("Your account has been deleted (demo).");
+      window.location.href = "welcome.html";
+    }
+  </script>
+</body>
+</html>
