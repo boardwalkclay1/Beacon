@@ -1,0 +1,431 @@
+/* beacon.css */
+/* Global green + black neon beacon theme */
+
+:root {
+  --bg-main: #02040a;
+  --bg-elevated: #050816;
+  --accent: #19ff7a;
+  --accent-soft: rgba(25, 255, 122, 0.15);
+  --accent-strong: rgba(25, 255, 122, 0.5);
+  --text-primary: #f5f7ff;
+  --text-muted: #9ea3b5;
+  --danger: #ff3b6b;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-glow: 0 0 20px rgba(25, 255, 122, 0.4);
+  --transition-fast: 0.18s ease-out;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-main);
+  background: radial-gradient(circle at top, #041626 0, #02040a 45%, #000 100%);
+  color: var(--text-primary);
+}
+
+/* Subtle animated radio-wave background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 20% -10%, rgba(25, 255, 122, 0.17), transparent 60%),
+    radial-gradient(circle at 80% 110%, rgba(25, 255, 122, 0.12), transparent 60%),
+    repeating-radial-gradient(circle at 50% 0, transparent 0, transparent 12px, rgba(25, 255, 122, 0.08) 12px, rgba(25, 255, 122, 0.08) 13px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
+  animation: wavePulse 12s infinite linear;
+}
+
+@keyframes wavePulse {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Layout wrapper */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.app-main-card {
+  margin: auto;
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), transparent 60%);
+  border-radius: 24px;
+  padding: 24px 20px 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(22px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner glow / beacon ring accent */
+
+.app-main-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(25, 255, 122, 0.22), transparent 60%),
+    radial-gradient(circle at 10% 120%, rgba(25, 255, 122, 0.12), transparent 55%);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Top branding */
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.app-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, #19ff7a 0, #0b5b32 40%, #02040a 75%);
+  box-shadow:
+    0 0 20px rgba(25, 255, 122, 0.9),
+    0 0 50px rgba(25, 255, 122, 0.6);
+  position: relative;
+}
+
+/* Emitting beacon waves */
+
+.app-logo::before,
+.app-logo::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: inherit;
+  border: 2px solid rgba(25, 255, 122, 0.4);
+  opacity: 0;
+  animation: beaconPing 2.8s infinite ease-out;
+}
+
+.app-logo::after {
+  inset: -22px;
+  animation-delay: 0.9s;
+}
+
+@keyframes beaconPing {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+.app-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.app-tagline {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+/* Headings & text */
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.app-heading {
+  font-size: 1.35rem;
+  margin: 6px 0 4px;
+}
+
+.app-subheading {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Forms */
+
+form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--text-primary);
+  padding: 10px 11px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), transform 0.08s ease-out;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-soft), var(--shadow-glow);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Checkboxes */
+
+.form-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.form-checkbox-row input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+/* Buttons */
+
+.btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform 0.08s ease-out, box-shadow var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.btn-primary {
+  background: radial-gradient(circle at 50% 0, #19ff7a, #0b5b32);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(25, 255, 122, 0.6);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--accent-strong);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: rgba(25, 255, 122, 0.08);
+  box-shadow: 0 0 18px rgba(25, 255, 122, 0.45);
+}
+
+.btn-text {
+  background: transparent;
+  border: none;
+  padding-inline: 0;
+  justify-content: flex-start;
+  color: var(--accent);
+}
+
+.btn-text:hover {
+  color: #72ffb0;
+}
+
+/* Links */
+
+.app-link {
+  color: var(--accent);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.app-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer hint / bottom text */
+
+.app-footer-text {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Onboarding slides */
+
+.onboarding-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.onboarding-slide {
+  display: none;
+}
+
+.onboarding-slide.active {
+  display: block;
+}
+
+.onboarding-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.onboarding-title {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.onboarding-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.onboarding-progress {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.onboarding-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.onboarding-dot.active {
+  background: var(--accent);
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(25, 255, 122, 0.7);
+}
+
+/* Two-column layout for emergency profile chunks (on bigger screens) */
+
+@media (min-width: 480px) {
+  .form-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+/* Small “chip” label */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--accent-strong);
+  color: var(--accent);
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(25, 255, 122, 0.8);
+}
+
+/* Small helper text */
+
+.helper-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Error text example (if you wire validation later) */
+
+.error-text {
+  font-size: 0.78rem;
+  color: #ff5c88;
+  margin-top: 4px;
+}
