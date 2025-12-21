@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Log in</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Welcome back</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">Log back into safety</h1>
+        <p class="app-subheading">
+          Continue where you left off. Your profile, guardian angels, and groups will be right here.
+        </p>
+
+        <form onsubmit="handleLogin(event)">
+          <div class="form-row">
+            <label class="form-label" for="login-contact">Email or phone</label>
+            <input class="form-input" id="login-contact" type="text" required />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="login-password">Password</label>
+            <input class="form-input" id="login-password" type="password" required />
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="button" class="btn btn-text" onclick="alert('Password reset flow not wired yet.')">
+              Forgot password?
+            </button>
+            <a href="signup.html" class="btn btn-text">Create a new account</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      // For now, just go to onboarding/basic profile.
+      window.location.href = "onboarding.html";
+    }
+  </script>
+</body>
+</html>
