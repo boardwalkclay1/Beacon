@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Map</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .map-box {
+      width: 100%;
+      height: 260px;
+      border-radius: var(--radius-lg);
+      background: #000;
+      border: 1px solid var(--accent-strong);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Live map</span>
+        </div>
+      </header>
+
+      <section>
+        <div class="map-box">
+          MAP PLACEHOLDER  
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="triggerBeacon()">Emergency Beacon</button>
+          <a class="btn btn-outline" href="home.html">Back to Home</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function triggerBeacon() {
+      window.location.href = "beacon-confirm.html";
+    }
+  </script>
+</body>
+</html>
