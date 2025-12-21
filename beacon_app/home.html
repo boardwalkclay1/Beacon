@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Home</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Dashboard</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">How are you feeling today?</h1>
+
+        <div class="btn-row">
+          <button class="btn btn-outline">Good</button>
+          <button class="btn btn-outline">Low</button>
+          <button class="btn btn-outline">Anxious</button>
+        </div>
+
+        <hr style="border:1px solid var(--border-subtle); margin:20px 0;" />
+
+        <h2 class="app-heading">Quick actions</h2>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="checkIn()">Check in now</button>
+          <a class="btn btn-outline" href="map.html">Open map</a>
+        </div>
+
+        <p id="checkin-msg" class="app-footer-text" style="display:none;">
+          ✔ You checked in just now.
+        </p>
+
+        <hr style="border:1px solid var(--border-subtle); margin:20px 0;" />
+
+        <h2 class="app-heading">Recent Beacons near you</h2>
+        <p class="app-subheading">No recent alerts in your area.</p>
+
+        <h2 class="app-heading">Guardian Angels online</h2>
+        <p class="app-subheading">3 Angels nearby</p>
+        <a href="guardian-angels.html" class="btn btn-outline">View Angels</a>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function checkIn() {
+      document.getElementById("checkin-msg").style.display = "block";
+    }
+  </script>
+</body>
+</html>
