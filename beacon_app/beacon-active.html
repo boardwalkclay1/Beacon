@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Active SOS</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .map-box {
+      width: 100%;
+      height: 240px;
+      border-radius: var(--radius-lg);
+      background: #000;
+      border: 1px solid var(--danger);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--danger);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Emergency active</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading" style="color:var(--danger);">Beacon Activated</h1>
+        <p class="app-subheading">
+          Help is being notified. Stay safe and keep your phone visible.
+        </p>
+
+        <div class="map-box">LIVE LOCATION</div>
+
+        <p class="app-subheading">Notified: 3 nearby responders, 1 Guardian Angel</p>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="endBeacon()">End Beacon</button>
+          <button class="btn btn-outline" onclick="alert('Dialing 911...')">Call 911</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function endBeacon() {
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>
