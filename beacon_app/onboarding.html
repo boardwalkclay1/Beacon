@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Onboarding</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">How it works</span>
+        </div>
+      </header>
+
+      <section class="onboarding-wrapper">
+        <div id="slide-1" class="onboarding-slide active">
+          <div class="onboarding-badge">For people without a safety net</div>
+          <h1 class="onboarding-title">Beacon is built for the unconnected.</h1>
+          <p class="onboarding-text">
+            Not everyone has family to call or a friend nearby. Beacon is a quiet backup:
+            a way to be seen and protected when you feel completely alone.
+          </p>
+        </div>
+
+        <div id="slide-2" class="onboarding-slide">
+          <div class="onboarding-badge">Guardian Angels</div>
+          <h1 class="onboarding-title">Some people choose to watch over others.</h1>
+          <p class="onboarding-text">
+            Guardian Angels are volunteers who respond to Beacons, check in on you,
+            and can be sponsored or tipped by the community for the care they give.
+          </p>
+        </div>
+
+        <div id="slide-3" class="onboarding-slide">
+          <div class="onboarding-badge">Emergency Beacon</div>
+          <h1 class="onboarding-title">In danger, you press one button.</h1>
+          <p class="onboarding-text">
+            When you trigger a Beacon, your location and emergency info can be shared with
+            people you trust and nearby responders. Beacon never replaces 911 — it backs you up.
+          </p>
+        </div>
+
+        <div class="onboarding-progress">
+          <div class="onboarding-dot active" data-step="0"></div>
+          <div class="onboarding-dot" data-step="1"></div>
+          <div class="onboarding-dot" data-step="2"></div>
+        </div>
+
+        <div class="btn-row">
+          <button id="onboarding-next" class="btn btn-primary">Next</button>
+          <button id="onboarding-skip" class="btn btn-text">Skip</button>
+        </div>
+
+        <p class="app-footer-text">
+          You control what you share and who sees you. Let’s set up your profile next.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const slides = [
+      document.getElementById("slide-1"),
+      document.getElementById("slide-2"),
+      document.getElementById("slide-3"),
+    ];
+    const dots = document.querySelectorAll(".onboarding-dot");
+    const nextBtn = document.getElementById("onboarding-next");
+    const skipBtn = document.getElementById("onboarding-skip");
+
+    let current = 0;
+
+    function updateSlides() {
+      slides.forEach((s, i) => {
+        s.classList.toggle("active", i === current);
+      });
+      dots.forEach((d, i) => {
+        d.classList.toggle("active", i === current);
+      });
+
+      if (current === slides.length - 1) {
+        nextBtn.textContent = "Continue";
+      } else {
+        nextBtn.textContent = "Next";
+      }
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (current < slides.length - 1) {
+        current++;
+        updateSlides();
+      } else {
+        window.location.href = "basic-profile.html";
+      }
+    });
+
+    skipBtn.addEventListener("click", () => {
+      window.location.href = "basic-profile.html";
+    });
+  </script>
+</body>
+</html>
