@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Sign up</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Create your lifeline</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">Create your Beacon account</h1>
+        <p class="app-subheading">
+          Just enough information to keep you safe. You can always adjust things later.
+        </p>
+
+        <form onsubmit="handleSignup(event)">
+          <div class="form-row">
+            <label class="form-label" for="signup-contact">Email or phone</label>
+            <input class="form-input" id="signup-contact" type="text" required placeholder="you@example.com or +1 404 555 0123" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="signup-password">Password</label>
+            <input class="form-input" id="signup-password" type="password" minlength="6" required />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="signup-password-confirm">Confirm password</label>
+            <input class="form-input" id="signup-password-confirm" type="password" minlength="6" required />
+            <div id="password-error" class="error-text" style="display:none;">
+              Passwords don’t match. Please check and try again.
+            </div>
+          </div>
+
+          <div class="form-checkbox-row">
+            <input id="terms" type="checkbox" required />
+            <label for="terms">
+              I agree to Beacon’s terms and safety guidelines. I understand Beacon does not replace emergency services.
+            </label>
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Sign up</button>
+            <a href="login.html" class="btn btn-text">Already have an account? Log in</a>
+          </div>
+        </form>
+
+        <p class="app-footer-text">
+          Beacon will ask for your permission before sharing your location or emergency details.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function handleSignup(event) {
+      event.preventDefault();
+      const password = document.getElementById("signup-password").value;
+      const confirm = document.getElementById("signup-password-confirm").value;
+      const errorEl = document.getElementById("password-error");
+
+      if (password !== confirm) {
+        errorEl.style.display = "block";
+        return;
+      }
+
+      errorEl.style.display = "none";
+
+      // Simulate success – in a real app you’d call your backend.
+      window.location.href = "onboarding.html";
+    }
+  </script>
+</body>
+</html>
