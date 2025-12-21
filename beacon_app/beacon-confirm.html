@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Confirm Emergency</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Emergency confirmation</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">Are you in immediate danger?</h1>
+        <p class="app-subheading">
+          Triggering a Beacon alerts nearby responders and your chosen contacts.
+        </p>
+
+        <div class="form-row">
+          <label class="form-label">Optional message</label>
+          <textarea class="form-textarea" placeholder="Describe what's happening..."></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="activate()">Yes, trigger Beacon</button>
+          <a href="map.html" class="btn btn-outline">Cancel</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function activate() {
+      window.location.href = "beacon-active.html";
+    }
+  </script>
+</body>
+</html>
