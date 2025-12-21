@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Create Group</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Create group</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">Start a small circle of safety.</h1>
+        <p class="app-subheading">
+          Groups work best when they’re small, specific, and built on trust.
+        </p>
+
+        <form onsubmit="saveGroup(event)">
+          <div class="form-row">
+            <label class="form-label" for="group-name">Group name</label>
+            <input id="group-name" class="form-input" type="text" required placeholder="e.g. New to Atlanta" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="group-description">Description</label>
+            <textarea id="group-description" class="form-textarea" required placeholder="What is this group for? Who should join?"></textarea>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="group-tag">Tag</label>
+            <input id="group-tag" class="form-input" type="text" placeholder="e.g. night shift, queer, students" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="join-type">Join type</label>
+            <select id="join-type" class="form-select">
+              <option>Private (invite only)</option>
+              <option>Request to join (admin approval)</option>
+            </select>
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Create group</button>
+            <a href="groups.html" class="btn btn-text">Cancel</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function saveGroup(e) {
+      e.preventDefault();
+      alert("Group created (demo).");
+      window.location.href = "groups.html";
+    }
+  </script>
+</body>
+</html>
