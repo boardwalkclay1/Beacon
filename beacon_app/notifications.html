@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beacon – Privacy & Safety</title>
+  <link rel="stylesheet" href="beacon.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .toggle-row span {
+      font-size: 0.9rem;
+    }
+    .toggle {
+      width: 42px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--border-subtle);
+      position: relative;
+      cursor: pointer;
+    }
+    .toggle::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--text-primary);
+      transition: 0.2s;
+    }
+    .toggle.active {
+      background: var(--accent);
+    }
+    .toggle.active::after {
+      transform: translateX(20px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="app-main-card">
+
+      <header class="app-brand">
+        <div class="app-logo"></div>
+        <div class="app-title-block">
+          <span class="app-title">Beacon</span>
+          <span class="app-tagline">Privacy & Safety</span>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="app-heading">Privacy & Safety</h1>
+
+        <div class="toggle-row">
+          <span>Allow location sharing</span>
+          <div class="toggle" onclick="this.classList.toggle('active')"></div>
+        </div>
+
+        <div class="toggle-row">
+          <span>Allow group invites</span>
+          <div class="toggle" onclick="this.classList.toggle('active')"></div>
+        </div>
+
+        <div class="toggle-row">
+          <span>Show online status</span>
+          <div class="toggle" onclick="this.classList.toggle('active')"></div>
+        </div>
+
+        <div class="btn-row" style="margin-top:16px;">
+          <a href="settings.html" class="btn btn-text">Back to Settings</a>
+        </div>
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
