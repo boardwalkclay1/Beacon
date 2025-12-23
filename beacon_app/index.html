@@ -2,62 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Beacon – Home</title>
-  <link rel="stylesheet" href="beacon.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beacon</title>
+
+  <!-- Green + Black Tactical Theme -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      color: #39FF14;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #39FF14;
+    }
+
+    p {
+      color: #b3ffcc;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #39FF14;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 0 12px #39FF14;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 20px #39FF14;
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      color: #0f0;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="app-shell">
-    <main class="app-main-card">
 
-      <header class="app-brand">
-        <div class="app-logo"></div>
-        <div class="app-title-block">
-          <span class="app-title">Beacon</span>
-          <span class="app-tagline">Dashboard</span>
-        </div>
-      </header>
+  <h1>BEACON</h1>
+  <p>Your safety signal. Your guardian network.</p>
 
-      <section>
-        <h1 class="app-heading">How are you feeling today?</h1>
+  <!-- Link to your real home screen -->
+  <a class="btn" href="home.html">Enter Beacon</a>
 
-        <div class="btn-row">
-          <button class="btn btn-outline">Good</button>
-          <button class="btn btn-outline">Low</button>
-          <button class="btn btn-outline">Anxious</button>
-        </div>
+  <footer>© Beacon — Static Prototype</footer>
 
-        <hr style="border:1px solid var(--border-subtle); margin:20px 0;" />
-
-        <h2 class="app-heading">Quick actions</h2>
-        <div class="btn-row">
-          <button class="btn btn-primary" onclick="checkIn()">Check in now</button>
-          <a class="btn btn-outline" href="map.html">Open map</a>
-        </div>
-
-        <p id="checkin-msg" class="app-footer-text" style="display:none;">
-          ✔ You checked in just now.
-        </p>
-
-        <hr style="border:1px solid var(--border-subtle); margin:20px 0;" />
-
-        <h2 class="app-heading">Recent Beacons near you</h2>
-        <p class="app-subheading">No recent alerts in your area.</p>
-
-        <h2 class="app-heading">Guardian Angels online</h2>
-        <p class="app-subheading">3 Angels nearby</p>
-        <a href="guardian-angels.html" class="btn btn-outline">View Angels</a>
-
-      </section>
-
-    </main>
-  </div>
-
-  <script>
-    function checkIn() {
-      document.getElementById("checkin-msg").style.display = "block";
-    }
-  </script>
 </body>
 </html>
